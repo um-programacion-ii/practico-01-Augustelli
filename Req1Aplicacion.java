@@ -1,4 +1,5 @@
 import dto.*;
+import service.CocinaSvc;
 
 public class Req1Aplicacion {
     public static void main(String[] args) {
@@ -14,10 +15,10 @@ public class Req1Aplicacion {
         ingredientes[0] = huevo;
         Despensa despensa = new Despensa(ingredientes);
         despensa.addIngrediente(new Ingrediente("Leche", 1.0f));
-        System.out.println(despensa);
-        despensa.getIngrediente("Huevo", 1.0f);
-        System.out.println(despensa);
-        despensa.getIngrediente("Huevo", 1.0f);
+//        System.out.println(despensa);
+//        despensa.getIngrediente("Huevo", 1.0f);
+//        System.out.println(despensa);
+//        despensa.getIngrediente("Huevo", 1.0f);
 
 
 //        Requerimiento 3
@@ -32,6 +33,15 @@ public class Req1Aplicacion {
         System.out.println(lecheConCereal2);
         PanConQueso panConQueso = new PanConQueso();
         System.out.println(panConQueso);
+
+
+        // Requerimiento 4
+        CocinaSvc cocinaSvc = new CocinaSvc(new Chef("Gordon Ramsay", 3), despensa);
+        cocinaSvc.prepararReceta(huevoDuro);
+        cocinaSvc.prepararReceta(lecheConCereal);
+
+
+
 
 
 
