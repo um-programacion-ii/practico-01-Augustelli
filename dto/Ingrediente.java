@@ -35,4 +35,18 @@ public class Ingrediente {
     public void setCantidad(float cantidad) {
         this.cantidad = cantidad;
     }
+
+    public void sacar(float cantidadQuitar) throws Exception {
+        if (cantidad < cantidadQuitar || cantidad==0){
+            throw new Exception("No se puede quitar la cantidad solicitada debido a que es mayor a la disponible.");
+        }
+        this.setCantidad(this.getCantidad()-cantidad);
+    }
+
+    public void sacar(int cantidadQuitar) throws Exception {
+        if (cantidad < cantidadQuitar || cantidad==0){
+            throw new Exception("No se puede quitar la cantidad solicitada debido a que es mayor a la disponible.");
+        }
+        this.setCantidad(this.getCantidad() - cantidadQuitar);
+    }
 }
